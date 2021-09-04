@@ -1,4 +1,4 @@
-# Medical App UI Template made using Ionic 5 and Angular
+# Medical App UI Template made using Ionic 5, Angular and Capacitor
 
 You can use this Ionic UI template to quick start your medical App development.
 
@@ -13,11 +13,11 @@ You can use this Ionic UI template to quick start your medical App development.
 * Then run, ionic serve
 
 
-# UI CREDITS TO:
+# UX CREDITS TO:
   * MATT WOJTAS from dribble.com
 
 
-#Main UI screenshots
+# Main UI screenshots
 
 <img src="./src/assets/Screenshot.png">
 

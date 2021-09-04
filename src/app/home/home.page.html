@@ -1,20 +1,68 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+  <ion-toolbar >
+    <ion-item lines="none" class="header">
+      <ion-icon id="menuIcon" src="assets/svg/menu.svg" slot="start" (click)="openMenu()"></ion-icon>
+      <ion-icon id="right" slot="end" name="calendar-outline" size="small"></ion-icon>
+      <ion-icon id="right" slot="end" name="notifications" size="small"></ion-icon>
+      <ion-avatar size="small" slot="end">
+        <img src="assets/images/profile.jpeg">
+      </ion-avatar>
+      </ion-item>
   </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div class="section">
+    <ion-item lines="none">
+      <ion-label class="title">My Patient profiles</ion-label>
+      <ion-icon name="add-outline" slot="end" color="primary"></ion-icon>
+     </ion-item>
   </div>
+  <div class="patient-card">
+    <ion-slides (ionSlideDidChange)="slideChanged($event)" [options]="cardOptions" pager="true" class="no-padding" #slides>
+      <ion-slide class="no-padding" *ngFor="let item of patients">
+        <ion-card>
+          <ion-item class="no-padding">
+            <ion-note slot="start">2days Ago</ion-note>
+            <ion-icon slot="end" name="ellipsis-horizontal-outline" size="small"></ion-icon>
+          </ion-item>
+          <br>
+            <img class="profImg" src="assets/images/profile.jpeg">
+          <div class="desc">
+            <ion-label id="name">Jonathan smith</ion-label><br>
+            <ion-label color="primary">Active</ion-label>
+            <ion-progress-bar value="0.5"></ion-progress-bar>
+            <ion-note id="storage">Storage 50%</ion-note>
+          </div>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="slide-count">
+    <ion-item lines="none">
+      <ion-label id="label">Patient profiles: <span>{{currentSlides}}</span> of <span>{{patients.length}}</span></ion-label>
+      <ion-button fill="clear" slot="end">Upgrade</ion-button>
+    </ion-item>
+
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+
+
+
 </ion-content>
+<ion-footer>
+  <div class="ft-img">
+    <img src="assets/images/profile.jpeg">
+  </div>
+  <div class="ft-desc">
+    <ion-label id="name">Jonathan smith</ion-label><br>
+    <ion-note>Patient</ion-note>
+  </div>
+  <div class="arrow">
+    <ion-icon name="chevron-down-outline"></ion-icon>
+  </div>
+</ion-footer>
