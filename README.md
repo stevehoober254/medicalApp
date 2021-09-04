@@ -19,4 +19,6 @@ You can use this Ionic UI template to quick start your medical App development.
 
 #Main UI screenshots
 
+<img src="./src/assets/Screenshot.png">
+
 
